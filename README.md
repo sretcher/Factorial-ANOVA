@@ -13,7 +13,7 @@ mow <- read_csv(file = "MOW.csv",col_names = TRUE, col_type=cols(
 ))
 ```
 
-When looking at our data, notice that `readr` automatically places our data in a tibble and our independent variables have the correct type. We also see that our data has 36 observations (plots of land) and the values for our independent variables and our response variable vegetation height (`VegHT`) are recorded for each observation. 
+When looking at our data, notice that `readr` automatically places our data in a tibble and our independent variables have the correct type. We also see that our data has 36 observations (plots of land) and the values for our independent variables and our response variable, vegetation height (`VegHT`), are recorded for each observation. 
 ```
 mow
 # A tibble: 36 x 3
