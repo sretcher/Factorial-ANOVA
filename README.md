@@ -31,3 +31,7 @@ mow
 # 10  20    1        17.9
 # ... with 26 more rows
 ```
+## Conditions Required for Valid F-Tests in Factorial Experiments.
+1. The response distribution for each factor-level combination is normal.
+2. The response variance is constant for all treatments.
+3. Random and independent samples of experimental units are associated with each treatment.
