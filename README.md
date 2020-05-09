@@ -35,3 +35,5 @@ mow
 1. The response distribution for each factor-level combination is normal.
 2. The response variance is constant for all treatments.
 3. Random and independent samples of experimental units are associated with each treatment.
+
+The following code checks
