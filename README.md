@@ -31,9 +31,41 @@ mow
 # 10  20    1        17.9
 # ... with 26 more rows
 ```
+
+The ideal situtation for Factorial ANOVA is for each treatment to have equal sample sizes and similiar variation (standard deviation). The following code shows that our Factorial ANOVA has a balanced design and all of the treatments have a similiar standard deviation. We will talk more about why it is important and helpful to have these conditions in the future.
+```
+
+table(mow$MowHT,mow$MowFreq)
+
+ #    1 2 3
+ # 5  4 4 4
+ # 10 4 4 4
+ # 20 4 4 4
+
+
+mow %>%
+  group_by(MowHT,MowFreq)%>%
+  summarise(n=n(),mean_height=mean(VegHT),sd=sd(VegHT))
+
+# MowHT MowFreq     n  mean_height    sd
+# <fct> <fct>   <int>       <dbl>   <dbl>
+#  5    1           4        17.1   1.77 
+#  5    2           4        22.4   1.58 
+#  5    3           4        18     1.41 
+# 10    1           4        15.9   0.797
+# 10    2           4        23.2   1.04 
+# 10    3           4        23.3   1.72 
+# 20    1           4        16.0   1.77 
+# 20    2           4        26.2   1.05 
+# 20    3           4        26.0   1.86 
+```
+
+
+
 ## Conditions Required for Valid F-Tests in Factorial Experiments.
 1. The response distribution for each factor-level combination is normal.
 2. The response variance is constant for all treatments.
 3. Random and independent samples of experimental units are associated with each treatment.
 
-If the responses for each treatment are approximately normal, then a plot of all of the residuals for our model will also be normal.  
+If the responses for each treatment are approximately normal, then a plot of all of the residuals for our model will also be normal. Recall that Anova and Regression are both special cases of the general linear model, which is why we can use the same `lm` function for regression to find the residuals for our Factorial ANOVA. Using the `lmThe QQ-Plot of residuals shows that the residuals are approximately normal, so the treatment populations are normal.
+
