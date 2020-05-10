@@ -36,4 +36,4 @@ mow
 2. The response variance is constant for all treatments.
 3. Random and independent samples of experimental units are associated with each treatment.
 
-The following code checks
+If the responses for each treatment are approximately normal, then a plot of all of the residuals for our model will also be normal.  
