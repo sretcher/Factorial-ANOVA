@@ -86,3 +86,4 @@ We could have also looked at the normality of each treatment individually to che
 ```
 ggqqplot(mow,x = "VegHT",facet.by = c("MowHT","MowFreq"))
 ```
+![qq-plots](qqplot.png)
