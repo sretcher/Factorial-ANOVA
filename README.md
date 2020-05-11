@@ -81,3 +81,8 @@ shapiro.test(residuals)
 # data:  residuals
 # W = 0.96704, p-value = 0.3504
 ```
+We could have also looked at the normality of each treatment individually to check the first assumption. Plotting the QQ-Plot for each treatment shows that the treatment populations are normal since the data points fall along each reference line. It is important to note that ANOVA is a robust method when the assumption of normality is violated, which gives us even more confidence in satisfying this condition. 
+
+```
+ggqqplot(mow,x = "VegHT",facet.by = c("MowHT","MowFreq"))
+```
