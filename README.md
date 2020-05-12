@@ -109,7 +109,7 @@ ggplot(mow,aes(x=predictions,y=residuals))+
 
 ![qq-plots](variance1.png)
 
-We also look at boxplots for each treatment and conduct Levene's test which show that the response variance is constant for each treatment. 
+Looking at boxplots and conducting Levene's test gives more evidence of a constant response variance.
 
 ```
 levene_test(mow,VegHT~MowFreq*MowHT)
