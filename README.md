@@ -118,5 +118,5 @@ levene_test(mow,VegHT~MowFreq*MowHT)
 ggplot(mow,mapping=aes(MowFreq,VegHT,fill = MowHT))+
   geom_boxplot()
 ```
-![boxplot](boxplot.png)
+![boxplot](boxplot1.png)
 
