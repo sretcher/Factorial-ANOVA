@@ -87,3 +87,21 @@ We could have also looked at the normality of each treatment individually to che
 ggqqplot(mow,x = "VegHT",facet.by = c("MowHT","MowFreq"))
 ```
 ![qq-plots](qqplot.png)
+
+
+When conducting a factorial ANOVA, one of the assumptions is that the response variance is constant across treatments. This assumption is commonly known as the homogeneity of variance. If the variance is not constant, the probabilities associated with tests of significance (p-values, confidence intervals, etc) will be affected. If the sample sizes among treatments are equal, this effect is lessened greatly which is another reason why balanced designs are so great. 
+
+Unfortunately, unbalanced designs are common in factorial ANOVAs because we are dividing up our sample into many cells (subset of cases representing an intersection between factors) depending on the number of factors. Even when we do have a balanced design, we may not have enough data in the individual cells to use statistical tests or specific plots. In our example, using individual normal plots or Levene's test for variance would be less reliable than other methods at testing assumptions. This is why it is important to test assumptions in more than one way. 
+
+If the responses for each treatments have a similiar spread, then a plot of the residuals vs. the predicted values for each observation will exhibit a constant spread. Looking below, we see that the residuals have a constant spread as predicted values increase. This menas the response variance is constant for our treatments.
+
+```
+predictions = predict(model)
+
+ggplot(mow,aes(x=predictions,y=residuals))+
+  geom_point()+
+  geom_hline(yintercept = 0)
+```
+
+![qq-plots](variance.png)
+
