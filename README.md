@@ -69,7 +69,7 @@ mow %>%
 
 
 
-We have a random sample of plots and each were assigned a random treatment, so the first assumption to be satisfied. 
+The first assumption is satisfied since we have a random sample of plots and each were assigned a random treatment. 
 
 If the responses for each treatment are approximately normal, then a plot of all of the residuals for our model will also be normal. Recall that Anova and Regression are both special cases of the general linear model, which is why we can use the same `lm` function for regression to find the residuals for our Factorial ANOVA. Using the residuals from the `lm` function, the Shapiro-Wilk test of the residuals shows that the residuals are approximately normal since the p-value is greather than .05, so the treatment populations are normal. Note that the order of our factors in the formula for `lm` usually matters but since we have a balanced design, changing the order of our factors will have no effect on our model.
 ```
