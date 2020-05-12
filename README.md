@@ -105,3 +105,18 @@ ggplot(mow,aes(x=predictions,y=residuals))+
 
 ![qq-plots](variance.png)
 
+We also look at boxplots for each treatment and conduct Levene's test which show that the response variance is constant for each treatment. 
+
+```
+levene_test(mow,VegHT~MowFreq*MowHT)
+
+# A tibble: 1 x 4
+#    df1   df2 statistic   p
+#  <int> <int>     <dbl> <dbl>
+# 1  8    27     0.566   0.796
+
+ggplot(mow,mapping=aes(MowFreq,VegHT,fill = MowHT))+
+  geom_boxplot()
+```
+![boxplot](boxplot.png)
+
