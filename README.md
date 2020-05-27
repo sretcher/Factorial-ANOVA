@@ -168,7 +168,16 @@ Since we have two independent variables, our Factorial ANOVA will also produces 
 ```
 fit <- aov(VegHT~MowHT*MowFreq,data = mow)
 summary(fit)
+
+# Df Sum Sq Mean Sq F value   Pr(>F)    
+# MowHT          2   77.9   38.95   17.57 1.29e-05 ***
+# MowFreq        2  388.0  193.99   87.53 1.58e-12 ***
+# MowHT:MowFreq  4   90.2   22.56   10.18 3.71e-05 ***
+# Residuals     27   59.8    2.22       
 ```
+
+Using a signficance level of 0.01, we see from the ouput above that our independent variables have a main effect on our dependent variable and they interact with each other to affect our dependent variable. Because an interaction is present, the main effects of our independent variables cease to have much meaning. We will look at line graphs and cell means in order to find the nature of this interaction.
+
 
 
 
