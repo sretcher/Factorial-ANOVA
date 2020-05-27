@@ -126,7 +126,7 @@ ggplot(mow,mapping=aes(MowFreq,VegHT,fill = MowHT))+
 
 
 
-## Tests Conducted in Analyses of Factorial Experiments:
+## Tests Conducted in our Analyses of Factorial Experiments:
 
 #### Test for Main Effect of Mowing Height
 
