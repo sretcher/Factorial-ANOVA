@@ -128,20 +128,20 @@ ggplot(mow,mapping=aes(MowFreq,VegHT,fill = MowHT))+
 
 ## Tests Conducted in Analyses of Factorial Experiments:
 
-### Test for Interaction
+#### Test for Interaction
 
 Ho: The factors of mowing height and mowing frequency do not interact to affect mean vegetation height.
 
 Ha: The factors of mowing height and mowing frequency do interact to affect mean vegetation height
 
-### Test for Main Effect of Mowing Height
+#### Test for Main Effect of Mowing Height
 
 Ho: There is no difference between the three vegetation height means for the type of mowing height used by equipment.
 
 Ha: There is a difference between the three vegetation height means for the type of mowing height used by equipment.
 
 
-### Test for Main Effect of Mowing Frequency
+#### Test for Main Effect of Mowing Frequency
 
 Ho: There is no difference between the three vegetation height means for the type of mowing frequency.
 
