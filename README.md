@@ -176,7 +176,7 @@ summary(fit)
 # Residuals     27   59.8    2.22       
 ```
 
-Using a signficance level of 0.01, we see from the ouput above that our independent variables have a main effect on our dependent variable and they interact with each other to affect our dependent variable. Because an interaction is present, the main effects of our independent variables cease to have much meaning. We will look at response plot and cell means in order to find the nature of this interaction. 
+Using a signficance level of 0.01, we see from the ouput above that our independent variables have a main effect on our dependent variable and they interact with each other to affect our dependent variable. This was expected, since changing the height of mowing equipment and changing the mowing frequency is bound to have some effect on vegetation heiht. Because an interaction is present, the main effects of our independent variables cease to have much meaning. We will look at response plot and cell means in order to find the nature of this interaction. 
 
 ```
 library(HH)
