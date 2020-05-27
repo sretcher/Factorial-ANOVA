@@ -146,12 +146,29 @@ Ha: There is a difference between the three vegetation height means for the type
 
 Ho: The factors of mowing height and mowing frequency do not interact to affect mean vegetation height.
 
-Ha: The factors of mowing height and mowing frequency do interact to affect mean vegetation height
+Ha: The factors of mowing height and mowing frequency do interact to affect mean vegetation height.
+
+#### Test for Treatment Means
+
+Ho: No difference in treatment means.
+
+Ha: At least two treatment means differ.
 
 ## Factorial ANOVA Analysis
 
-In our Factorial ANOVA, we want to explain the variance in vegetation height by dividing the treatment variability into three components: the main effects, interaction effects, and simple effects. 
+In our Factorial ANOVA, we want to explain the variance in vegetation height by dividing the treatment variability into three components: the main effects, interaction effects, and simple effects. Each of these components is examined and tested in the above hypotheses (some may not be used becasue they depend on the results of other hypotheses).  
 
+The main effects of our Factorial ANOVA are similiar to the results of conducting one-way ANOVAs for each independent variable (mowing height and mowing frequency) on the dependent variable (vegetation height). The benefit of doing a Factorial ANOVA instead of individual one-way ANOVAs is that we can test for significant differences between groups of one independent variable on the dependent variable while controlling for the effects of the other independent variables and interaction effects. For example, we can test for a main effect of mowing height while partialing out the variance of vegetation height explained by mowing frequency. This allows us to find if a variable has an effect on the dependent variable beyond the effect of another variable or interaction effect.
+
+Since we have two independent variables, our Factorial ANOVA will also produces a two-way interaction effect. We will examine this interaction effect to see if the relationship between mowing frequency and vegetation height is moderated by mowing height or vice versa. 
+
+
+ 
+
+```
+fit <- aov(VegHT~MowHT*MowFreq,data = mow)
+summary(fit)
+```
 
 
 
