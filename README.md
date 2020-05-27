@@ -176,69 +176,15 @@ summary(fit)
 # Residuals     27   59.8    2.22       
 ```
 
-Using a signficance level of 0.01, we see from the ouput above that our independent variables have a main effect on our dependent variable and they interact with each other to affect our dependent variable. Because an interaction is present, the main effects of our independent variables cease to have much meaning. We will look at line graphs and cell means in order to find the nature of this interaction as well as Tukey group comparisons. 
+Using a signficance level of 0.01, we see from the ouput above that our independent variables have a main effect on our dependent variable and they interact with each other to affect our dependent variable. Because an interaction is present, the main effects of our independent variables cease to have much meaning. We will look at response plot and cell means in order to find the nature of this interaction. 
 
 ```
 library(HH)
 
 interaction2wt(mow$VegHT~mow$MowFreq*mow$MowHT)
-TukeyHSD(fit)
 ```
 ![interaction](interaction.png)
 
+Looking at the response plots, we see evidence of a main effect for both independent variables because the lines for each factor have a profound effect on the variation of vegetation height. After closer examination, we see that the treatment mowing height = 10 and mowing frequency = 1 produces the smallest average vegetation height (15.9 centimeters). It is also worth noting that the treatment mowing height = 20 and mowing frequency = 1 also produced a similiar average vegetation height (16.0 centimeters). The treatment mowing height = 20 and mowing frequency = (2,3) produced the highest average vegetation height (26.2, 26.0 centimeters).
 
-Tukey multiple comparisons of means
-    95% family-wise confidence level
-
-Fit: aov(formula = VegHT ~ MowHT * MowFreq, data = mow)
-
-$`MowHT`
-          diff       lwr      upr     p adj
-10-5  1.666667 0.1597229 3.173610 0.0279498
-20-5  3.600000 2.0930562 5.106944 0.0000076
-20-10 1.933333 0.4263895 3.440277 0.0099361
-
-$MowFreq
-         diff       lwr        upr     p adj
-2-1  7.583333  6.076390 9.09027712 0.0000000
-3-1  6.108333  4.601390 7.61527712 0.0000000
-3-2 -1.475000 -2.981944 0.03194379 0.0559431
-
-$`MowHT:MowFreq`
-            diff         lwr        upr     p adj
-10:1-5:1  -1.200  -4.7420441  2.3420441 0.9622106
-20:1-5:1  -1.025  -4.5670441  2.5170441 0.9852945
-5:2-5:1    5.275   1.7329559  8.8170441 0.0008569
-10:2-5:1   6.175   2.6329559  9.7170441 0.0000928
-20:2-5:1   9.075   5.5329559 12.6170441 0.0000001
-5:3-5:1    0.925  -2.6170441  4.4670441 0.9923744
-10:3-5:1   6.225   2.6829559  9.7670441 0.0000820
-20:3-5:1   8.950   5.4079559 12.4920441 0.0000001
-20:1-10:1  0.175  -3.3670441  3.7170441 1.0000000
-5:2-10:1   6.475   2.9329559 10.0170441 0.0000444
-10:2-10:1  7.375   3.8329559 10.9170441 0.0000051
-20:2-10:1 10.275   6.7329559 13.8170441 0.0000000
-5:3-10:1   2.125  -1.4170441  5.6670441 0.5444601
-10:3-10:1  7.425   3.8829559 10.9670441 0.0000045
-20:3-10:1 10.150   6.6079559 13.6920441 0.0000000
-5:2-20:1   6.300   2.7579559  9.8420441 0.0000682
-10:2-20:1  7.200   3.6579559 10.7420441 0.0000077
-20:2-20:1 10.100   6.5579559 13.6420441 0.0000000
-5:3-20:1   1.950  -1.5920441  5.4920441 0.6493444
-10:3-20:1  7.250   3.7079559 10.7920441 0.0000068
-20:3-20:1  9.975   6.4329559 13.5170441 0.0000000
-10:2-5:2   0.900  -2.6420441  4.4420441 0.9936314
-20:2-5:2   3.800   0.2579559  7.3420441 0.0285597
-5:3-5:2   -4.350  -7.8920441 -0.8079559 0.0080763
-10:3-5:2   0.950  -2.5920441  4.4920441 0.9909302
-20:3-5:2   3.675   0.1329559  7.2170441 0.0375813
-20:2-10:2  2.900  -0.6420441  6.4420441 0.1759244
-5:3-10:2  -5.250  -8.7920441 -1.7079559 0.0009113
-10:3-10:2  0.050  -3.4920441  3.5920441 1.0000000
-20:3-10:2  2.775  -0.7670441  6.3170441 0.2182929
-5:3-20:2  -8.150 -11.6920441 -4.6079559 0.0000008
-10:3-20:2 -2.850  -6.3920441  0.6920441 0.1920393
-20:3-20:2 -0.125  -3.6670441  3.4170441 1.0000000
-10:3-5:3   5.300   1.7579559  8.8420441 0.0008057
-20:3-5:3   8.025   4.4829559 11.5670441 0.0000011
-20:3-10:3  2.725  -0.8170441  6.2670441 0.2372122
+I would advise using the treatments (mowing height = 10 and mowing frequency = 1) and (mowing height = 20 and mowing frequency = 1) which would produce an average vegetation height well below 30 centimeters so it would not cause a safety hazard for drivers. This should be easy since the vegetation is only being mowed once a year. If the vegetation must be mowed more than once, I'd advised switching the mowing height to 5 centimeters since this mowing height produces the smallest vegetation height on average for all mowing frequencys. 
