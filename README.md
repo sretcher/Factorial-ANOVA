@@ -147,3 +147,12 @@ Ha: There is a difference between the three vegetation height means for the type
 Ho: The factors of mowing height and mowing frequency do not interact to affect mean vegetation height.
 
 Ha: The factors of mowing height and mowing frequency do interact to affect mean vegetation height
+
+## Factorial ANOVA Analysis
+
+In our Factorial ANOVA, we want to explain the variance in vegetation height by dividing the treatment variability into three components: the main effects, interaction effects, and simple effects. 
+
+
+
+
+
